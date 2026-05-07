@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800;900&family=Inter:wght@300;400;600&display=swap');
+
+@theme {
+  --color-magical-dark: #050a14;
+  --color-magical-fog: #0a1526;
+  --color-magical-gold: #cba153;
+  --color-magical-glow: #4b7be5;
+  --font-cinematic: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mythical: 'Cinzel', serif;
+}
+
+@layer base {
+  body {
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-cinematic);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-2xl;
+  }
+  
+  .glass-frame {
+    @apply bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden shadow-lg relative flex items-center justify-center;
+  }
+}
+
+/* Custom scrollbar to be hidden or very subtle */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Mobile performance: GPU-accelerated layers */
+canvas {
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent layout jank on mobile by not animating font-size */
+@media (max-width: 640px) {
+  .glass-card {
+    @apply p-5 rounded-xl;
+  }
+  .glass-frame {
+    @apply rounded-lg;
+  }
+}
+
+/* Smooth scroll for native browser scroll containers */
+* {
+  -webkit-overflow-scrolling: touch;
+}
