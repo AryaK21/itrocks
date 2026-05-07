@@ -22,8 +22,8 @@ export default function Scene({ children }) {
           <ambientLight intensity={0.5} color="#ffaa00" />
           <pointLight position={[0, 5, 5]} intensity={2} color="#cba153" distance={50} />
           
-          {/* 5 full-screen sections = pages 5 */}
-          <ScrollControls pages={5} damping={0.3} distance={0.17}>
+          {/* 5 full-screen sections = pages 5 | Slower scroll: distance 1.2 */}
+          <ScrollControls pages={5} damping={0.4} distance={1.2}>
             <ScrollSync />
             <SnapScroll pages={5} />
             {/* Dynamic Theme Controller MUST be inside ScrollControls */}
