@@ -1,6 +1,6 @@
 import { Scroll } from '@react-three/drei'
 import { motion } from 'framer-motion'
-import { Image as ImageIcon } from 'lucide-react'
+import { Image as ImageIcon, ChevronDown } from 'lucide-react'
 import AchievementsMarquee from './AchievementsMarquee'
 import WinnersWardrobe from './WinnersWardrobe'
 
@@ -43,10 +43,26 @@ export default function Overlay() {
             initial={{ opacity: 0, letterSpacing: '0.1em' }}
             whileInView={{ opacity: 1, letterSpacing: '0.3em' }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-4xl md:text-5xl font-mythical font-bold text-gray-200 mb-6 uppercase drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
+            className="text-2xl sm:text-4xl md:text-5xl font-mythical font-bold text-gray-200 uppercase drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
           >
             I Division
           </motion.h2>
+        </motion.div>
+
+        {/* Scroll Down Arrow */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        >
+          <span className="text-magical-gold/60 text-xs font-mythical uppercase tracking-[0.4em]">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <ChevronDown className="w-8 h-8 text-magical-gold/80" />
+          </motion.div>
         </motion.div>
       </section>
 
