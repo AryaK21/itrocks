@@ -16,7 +16,6 @@ function Divider() {
 export default function Overlay() {
   return (
     <Scroll html style={{ width: '100%', height: '100%' }}>
-
       {/* ── SECTION 1: HERO ── full viewport */}
       <section className="w-full h-screen flex flex-col items-center justify-center text-center px-4 relative z-10">
         <motion.div
@@ -128,7 +127,6 @@ export default function Overlay() {
           </motion.div>
         </div>
       </section>
-
     </Scroll>
   )
 }

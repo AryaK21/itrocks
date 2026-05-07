@@ -7,18 +7,19 @@ import { motion } from 'framer-motion'
 //    Then update the array below with the correct filenames!
 // ============================================================
 const achievements = [
-  { src: '/achievements/achievement-1.jpg', title: 'Hackathon Winners', subtitle: 'Tech Fest 2024' },
-  { src: '/achievements/achievement-2.jpg', title: 'Best Project Award', subtitle: 'Annual Exhibition' },
-  { src: '/achievements/achievement-3.jpg', title: 'Sports Champions', subtitle: 'Inter-Division 2024' },
-  { src: '/achievements/achievement-4.jpg', title: 'Cultural Fest', subtitle: 'First Place' },
-  { src: '/achievements/achievement-5.jpg', title: 'Quiz Bowl', subtitle: 'Division Champions' },
-  { src: '/achievements/achievement-6.jpg', title: 'Code Sprint', subtitle: '1st & 2nd Place' },
-  { src: '/achievements/achievement-1.jpg', title: 'Hackathon Winners', subtitle: 'Tech Fest 2024' },
-  { src: '/achievements/achievement-2.jpg', title: 'Best Project Award', subtitle: 'Annual Exhibition' },
-  { src: '/achievements/achievement-3.jpg', title: 'Sports Champions', subtitle: 'Inter-Division 2024' },
-  { src: '/achievements/achievement-4.jpg', title: 'Cultural Fest', subtitle: 'First Place' },
-  { src: '/achievements/achievement-5.jpg', title: 'Quiz Bowl', subtitle: 'Division Champions' },
-  { src: '/achievements/achievement-6.jpg', title: 'Code Sprint', subtitle: '1st & 2nd Place' },
+  { src: '', title: 'Achievement I', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement II', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement III', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement IV', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement V', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement VI', subtitle: 'Division Excellence' },
+  // duplicated for seamless loop
+  { src: '', title: 'Achievement I', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement II', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement III', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement IV', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement V', subtitle: 'Division Excellence' },
+  { src: '', title: 'Achievement VI', subtitle: 'Division Excellence' },
 ]
 
 export default function AchievementsMarquee() {
@@ -72,15 +73,18 @@ function AchievementCard({ item, i }) {
       >
         {/* Image */}
         <div className="aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
-          <img
-            src={item.src}
-            alt={item.title}
-            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-            onError={e => { e.target.style.display = 'none' }}
-          />
+          {item.src && (
+            <img
+              src={item.src}
+              alt={item.title}
+              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              onError={e => { e.target.style.display = 'none' }}
+            />
+          )}
           {/* Placeholder shown when image is missing */}
-          <div className="absolute inset-0 flex items-center justify-center text-magical-gold/40 text-xs font-mythical text-center px-2 pointer-events-none">
-            {item.title}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-magical-gold/40 text-xs font-mythical text-center px-2 pointer-events-none gap-2">
+            <span className="text-3xl">🏅</span>
+            <span>{item.title}</span>
           </div>
           {/* Golden shimmer on hover */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />

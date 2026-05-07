@@ -58,8 +58,9 @@ export default function ImageSequence() {
   useEffect(() => {
     const resize = () => {
       if (!canvasRef.current) return
-      canvasRef.current.width = window.innerWidth
-      canvasRef.current.height = window.innerHeight
+      const dpr = window.devicePixelRatio || 1
+      canvasRef.current.width = window.innerWidth * (dpr > 1.5 ? 1 : dpr) // Cap DPR for performance
+      canvasRef.current.height = window.innerHeight * (dpr > 1.5 ? 1 : dpr)
     }
     resize()
     window.addEventListener('resize', resize)

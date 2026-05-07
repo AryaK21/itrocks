@@ -8,19 +8,19 @@ import { motion } from 'framer-motion'
 //    and the winner's name!
 // ============================================================
 const posters = [
-  { src: '/posters/poster-1.jpg', event: 'Tech Fest 2024', winner: 'Rahul Sharma' },
-  { src: '/posters/poster-2.jpg', event: 'Cultural Night', winner: 'Priya Mehta' },
-  { src: '/posters/poster-3.jpg', event: 'Hackathon', winner: 'Arjun Patel' },
-  { src: '/posters/poster-4.jpg', event: 'Sports Week', winner: 'Sneha Joshi' },
-  { src: '/posters/poster-5.jpg', event: 'Project Expo', winner: 'Karan Verma' },
-  { src: '/posters/poster-6.jpg', event: 'Quiz Championship', winner: 'Ananya Singh' },
+  { src: '', event: 'Event I', winner: 'Division Champion' },
+  { src: '', event: 'Event II', winner: 'Division Champion' },
+  { src: '', event: 'Event III', winner: 'Division Champion' },
+  { src: '', event: 'Event IV', winner: 'Division Champion' },
+  { src: '', event: 'Event V', winner: 'Division Champion' },
+  { src: '', event: 'Event VI', winner: 'Division Champion' },
   // duplicated for seamless loop
-  { src: '/posters/poster-1.jpg', event: 'Tech Fest 2024', winner: 'Rahul Sharma' },
-  { src: '/posters/poster-2.jpg', event: 'Cultural Night', winner: 'Priya Mehta' },
-  { src: '/posters/poster-3.jpg', event: 'Hackathon', winner: 'Arjun Patel' },
-  { src: '/posters/poster-4.jpg', event: 'Sports Week', winner: 'Sneha Joshi' },
-  { src: '/posters/poster-5.jpg', event: 'Project Expo', winner: 'Karan Verma' },
-  { src: '/posters/poster-6.jpg', event: 'Quiz Championship', winner: 'Ananya Singh' },
+  { src: '', event: 'Event I', winner: 'Division Champion' },
+  { src: '', event: 'Event II', winner: 'Division Champion' },
+  { src: '', event: 'Event III', winner: 'Division Champion' },
+  { src: '', event: 'Event IV', winner: 'Division Champion' },
+  { src: '', event: 'Event V', winner: 'Division Champion' },
+  { src: '', event: 'Event VI', winner: 'Division Champion' },
 ]
 
 export default function WinnersWardrobe() {
